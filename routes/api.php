@@ -18,6 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// อัพโหลดไฟล์
 Route::post('upload', 'App\Http\Controllers\Api\UploadController@upload');
 Route::get('file/{path}', 'App\Http\Controllers\Api\UploadController@getFile');

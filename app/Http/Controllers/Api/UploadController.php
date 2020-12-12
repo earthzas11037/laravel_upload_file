@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class UploadController extends Controller
 {
+    // อัพโหลดไฟล์
     public function upload(Request $request){
         
         $fileName = time().'_'.$request->file->getClientOriginalName();  
@@ -16,6 +17,7 @@ class UploadController extends Controller
         return response()->json(['data' => $filePath]);
     }
 
+    // ดึงไฟล์
     public function getFile($path){
 
         return response()->download(public_path('uploads/'.$path));
